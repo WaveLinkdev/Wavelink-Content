@@ -35,5 +35,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           
+      - name: Retrieve directory listing
+        run: ls
+          
       - name: Test nodejs
-        run: node index.js
+        run: node .github/workflows/index.js

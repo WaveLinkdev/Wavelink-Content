@@ -24,6 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+
+      - name: idk anymore
+        run: echo ${{ secrets.GITHUB_TOKEN }}
           
       - name: Test nodejs
         run: node .github/workflows/index.js

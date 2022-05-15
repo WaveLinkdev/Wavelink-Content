@@ -1,6 +1,14 @@
 const fs = require('fs');
 
-fs.writeFile("test.json", JSON.stringify({ message: "hello world" }), (err) => {
+const paths = []
+
+fs.readdirSync('./blogs').forEach(file => { 
+    if (file.endsWith('.md')) { 
+        paths.push(file);
+    }
+})
+
+fs.writeFile("test.json", JSON.stringify({ markdowns: paths }), (err) => {
     if (err) {
         console.log(err)
     } else {
